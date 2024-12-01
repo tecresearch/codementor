@@ -70,7 +70,7 @@
 <body>
     <div class="logout-container">
         <h1>You have successfully logged out.</h1>
-        <a href="index.jsp">Login Again</a>
+        <a href="login.jsp">Login Again</a>
     </div>
 </body>
 </html>

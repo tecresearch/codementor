@@ -22,7 +22,6 @@ public class UserDaoImpl implements UserDao {
                 return false;
             }
             System.out.println("Connection established. Ready to prepare the statement for query");
-
             PreparedStatement stmt = conn.prepareStatement(query);
             // Set parameters in the prepared statement
             stmt.setString(1, user.getUsername());

@@ -150,9 +150,7 @@
         <aside class="sidebar">
             <h2>Dashboard</h2>
             <ul>
-                <li><p><strong>From Cookies:</strong> <%= cookieUser + " (" + logged + ")" %></p></li>
-                <hr>
-                <li><p><strong>From Datavase: <hr>Name:</strong> <%= name %></p></li>
+                <li><p><strong>From Database: <hr>Name:</strong> <%= name %></p></li>
                 <li><p><strong>Username:</strong> <%= username %></p></li>
                 <li><p><strong>Email:</strong> <%= email %></p></li>
                 <li><p><strong>Phone:</strong> <%= phone %></p></li>
@@ -167,25 +165,99 @@
 
             <!-- Logout Button -->
             <form action="logout" method="get">
+            <p>( <strong>From Cookies username:</strong> <%= cookieUser + " (" + logged + ")" %>)</p>
                 <button type="submit">Logout</button>
+                <hr>
             </form>
 
-            <!-- Courses Section -->
-            <section class="courses">
-                <h2>Available Programming Courses</h2>
-                <div class="course-grid">
-                    <% String[] courses = { "Java Fundamentals", "Advanced Java", "React.js", "Python for Beginners", "Node.js" };
-                        for (String course : courses) { %>
-                        <div class="course-card">
-                            <h3><%= course %></h3>
-                            <p>Master <%= course %> with hands-on projects and real-world applications.</p>
-                            <button id="en" >Enroll Now</button>
-                        </div>
-                    <% } %>
-                </div>
-            </section>
-        </main>
+    <!-- Courses Section -->
+<section class="courses">
+    <h2>Available Programming Courses</h2>
+    <div class="course-grid">
+        <% 
+        String[] courses = {
+            "Java Fundamentals",
+            "Advanced Java",
+            "React.js",
+            "Python for Beginners",
+            "Node.js",
+            "HTML & CSS Basics",
+            "JavaScript Essentials",
+            "Bootstrap for Responsive Design",
+            "TypeScript Basics",
+            "Angular.js",
+            "Vue.js",
+            "Next.js",
+            "Express.js",
+            "MongoDB Basics",
+            "PostgreSQL",
+            "MySQL Essentials",
+            "PHP for Beginners",
+            "Ruby on Rails",
+            "Django Framework",
+            "Flask Framework",
+            "Core JavaScript",
+            "jQuery Basics",
+            "RESTful API Development",
+            "GraphQL Basics",
+            "Redux for State Management",
+            "Microservices Architecture",
+            "Docker Essentials",
+            "Kubernetes Basics",
+            "AWS Fundamentals",
+            "Azure Cloud",
+            "Google Cloud Platform",
+            "Linux Command Line",
+            "Git and GitHub",
+            "CI/CD with Jenkins",
+            "Testing with Selenium",
+            "JUnit Testing",
+            "Spring Boot Basics",
+            "Spring Security",
+            "Hibernate ORM",
+            "Kotlin for Android",
+            "Swift for iOS Development",
+            "Flutter for Cross-Platform Apps",
+            "React Native Basics",
+            "Unity Game Development",
+            "Machine Learning with Python",
+            "Data Science with Python",
+            "Artificial Intelligence Essentials",
+            "Big Data with Hadoop",
+            "Apache Spark Basics",
+            "Blockchain Development",
+            "Cybersecurity Basics",
+            "Penetration Testing",
+            "IoT Essentials",
+            "Augmented Reality (AR)",
+            "Virtual Reality (VR)"
+        };
+        for (String course : courses) { 
+        %>
+        <div class="course-card">
+            <h3><%= course %></h3>
+            <p>Master <%= course %> with hands-on projects and real-world applications.</p>
+            <button class="enroll-button">Enroll Now</button>
+        </div>
+        <% 
+        } 
+        %>
     </div>
-  
+</section>
+
+<script>
+    // Select all buttons with the "enroll-button" class
+    const buttons = document.getElementsByClassName("enroll-button");
+
+    // Iterate through all buttons and add an event listener to each
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function () {
+            this.innerText = "Enrolled";
+            this.style.backgroundColor = "green";
+            this.style.color = "white";
+        });
+    }
+</script>
+    
 </body>
 </html>
